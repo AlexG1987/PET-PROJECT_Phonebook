@@ -1,0 +1,68 @@
+The task:
+"Phone book"
+Requirements:
+* Programming language: Java
+* Instruments:
+- JDK (http://java.sun.com)
+- Spring (http://spring.io/)
+- Maven (https://maven.apache.org/)
+
+Stored data
+System User Information
+- Login (only English characters, no less than 3, without special characters)
+- Password (minimum 5 characters)
+- Name (minimum 5 characters)
+Stored Information (single entry)
+- Surname (required, minimum 4 characters)
+- Name (required, minimum 4 characters)
+- Middle name (required, minimum 4 characters)
+- Mobile phone (required)
+- Home telephone (optional)
+- Address (optional)
+- e-mail (optional, generally accepted validation)
+
+The task:
+Implement the Web project “Phonebook”.
+Containing Pages:
+- authorization
+- Login to the system (login / password)
+- Registration
+- Sign Out
+Work with stored data:
+- View all data with the ability to filter by first / last name and number
+phone (not full compliance).
+- Add / Edit / Delete Stored Records
+- The system is available only to authorized users. If the user is not
+authorized, when you try to open any page it should redirect to the page
+authorization. On the authorization page, he can enter a username and password to enter
+system or register. When registering, the following fields are indicated: name, login and
+password.
+- Each authorized user has his own phone book, i.e. everyone
+the user sees only those records that he created.
+
+Pay attention (required)
+
+- Admin to manage users - not required.
+- The format of the phones should be checked and be valid for Ukraine, for example:
++380 (66) 1234567
+- The application must contain JUnit tests, as tight as possible
+covering code. Use of Mockito is encouraged.
+- The project should be collected by means of Maven
+- To run, use SpringBoot
+- Source code must be uploaded to GitHub / BitBucket
+- All application settings should be located in the properties file, the path to which should
+passed as arguments to the JVM machine (-Dlardi.conf = / path / to / file.properties).
+- The type of storage is indicated in the configuration file. Storage Type Used
+once at the start of the JVM (changes to the configuration file take effect only
+when restarting the JVM).
+- Implement at least two storage options: DBMS (MySQL) and file storage
+(XML / JSON / CSV to choose from). Storage settings must be specified in the file-
+configuration (host and user for DBMS or file path for file storage).
+- For file storage - if there is no file (s) - it (they) must be created.
+For the DBMS storage, the README.md file must contain an SQL query to create all
+required tables.
+- Data verification should be done on the server side.
+- The application should contain a clear logical separation between the presentation,
+logic and data source.
+Welcome
+- using jquery, bootstrap
