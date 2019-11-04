@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Телефонна книга</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 1px;
+        }
+    </style>
+</head>
+
+<div>
+    <h1>Телефонна книга</h1>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Вийти"/>
+    </form>
+
+    <div></div>
+    <h2>Список записів</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Прізвище</th>
+            <th>Ім'я</th>
+            <th>По-батькові</th>
+            <th>Мобільний телефон</th>
+            <th>Домашній телефон</th>
+            <th>Адреса</th>
+            <th>Email</th>
+            <th>Автор</th>
+            <th>Дії</th>
+        </tr>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="phonebook : ${phonebooks}">
+            <td th:text="${phonebook.lastName}"></td>
+            <td th:text="${phonebook.firstName}"></td>
+            <td th:text="${phonebook.patronymicName}"></td>
+            <td th:text="${phonebook.mobPhone}"></td>
+            <td th:text="${phonebook.homePhone}"></td>
+            <td th:text="${phonebook.address}"></td>
+            <td th:text="${phonebook.email}"></td>
+            <td th:text="${phonebook.author}"></td>
+            <td style="text-align: center"><a th:href="@{'/update/{id}'(id=${phonebook.id})}">Редагувати</a> | <a th:href="@{'/delete/{id}'(id=${phonebook.id})}">Видалити</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div></div>
+<h2>Пошук по прізвищу або мобільному номеру</h2>
+<form action="#" th:action="@{/}" th:object="${phonebooks}">
+    <label for="search">Пошук:</label>
+    <input name="search" id="search">
+    <div th:if="${not #lists.isEmpty(phonebooks)}">
+    </div>
+</form>
+
+<div></div>
+<div></div>
+<a href="add">Додати запис</a>
+
+</body>
+</html>

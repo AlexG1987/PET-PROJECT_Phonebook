@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</form>
+
+<h2>Запис</h2>
+<form action="#" th:action="@{/update/{id}(id=${phonebook.id})}" th:object="${phonebook}" method="post">
+    <input type="hidden" id="id" name="id" th:value="${phonebook.getId()}"/>
+    <p>Прізвище</p>
+    <input type="text" id="lastName" name="lastName" th:value="${phonebook.getLastName()}"/>
+    <p>Ім'я</p>
+    <input type="text" id="firstName" name="firstName" th:value="${phonebook.getFirstName()}"/>
+    <p>По-батькові</p>
+    <input type="text" id="patronymicName" name="patronymicName" th:value="${phonebook.getPatronymicName()}"/>
+    <p>Мобільний номер</p>
+    <input type="text" id="mobPhone" name="mobPhone" th:value="${phonebook.getMobPhone()}"/>
+    <p>Домашній номер</p>
+    <input type="text" id="homePhone" name="homePhone" th:value="${phonebook.getHomePhone()}"/>
+    <p>Адресаid
+    <input type="text" id="address" name="address" th:value="${phonebook.getAddress()}"/>
+    <p>Email</p>
+    <input type="text" id="email" name="email" th:value="${phonebook.getEmail()}"/>
+    <p></p>
+    <input type="submit" th:value="Зберегти">
+</form>
+
+</body>
+</html>
